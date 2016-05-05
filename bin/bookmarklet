@@ -70,8 +70,8 @@ function dataCallback(e, data) {
     }
 
     var code = bookmarklet.convert(data.code, data.options);
-    util.print(code + '\n');
     if (destination) fs.writeFileSync(destination, code);
+    else console.log(code + '\n');
 };
 
 if (source != '-') {
